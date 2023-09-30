@@ -5,6 +5,12 @@
       "password": "$2a$10$u/TmE6QwE/s6p72C3yc27eRY1Z7I/A/VFTEZxTZbj5echrfX8CR/K",
       "name": "kishor",
       "id": 1
+    },
+    {
+      "email": "kishor@gmail.com",
+      "password": "$2a$10$E/1SU8XcwsyG.nWRk64nt.t.GY4aaVt.3PANMObL4Ib1x.EogIzxa",
+      "name": "man1",
+      "id": 2
     }
   ],
   "conversations": [
