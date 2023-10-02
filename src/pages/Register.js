@@ -1,7 +1,20 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoImage from "../assets/images/lws-logo-light.svg";
 
 export default function Register() {
+const [name, setName] = useState("")
+const [email, setEmail] = useState("")
+const [password, setPassword] = useState("")
+const [confirmPassword, setConfirmPassword] = useState("")
+const [agreed, setagreed]= useState(false)
+
+
+const registerSubmit=(e)=>{
+    e.preventDefault();
+
+}
+
     return (
         <div className="grid place-items-center h-screen bg-[#F9FAFB">
             <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -18,7 +31,7 @@ export default function Register() {
                             Create your account
                         </h2>
                     </div>
-                    <form className="mt-8 space-y-6" action="#" method="POST">
+                    <form className="mt-8 space-y-6" onSubmit={registerSubmit}>
                         <input type="hidden" name="remember" value="true" />
                         <div className="rounded-md shadow-sm -space-y-px">
                             <div>
@@ -29,10 +42,12 @@ export default function Register() {
                                     id="name"
                                     name="Name"
                                     type="Name"
+                                    value={name}
                                     autoComplete="Name"
                                     required
                                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm"
                                     placeholder="Name"
+                                    onChange={(e)=>setName(e.target.value)}
                                 />
                             </div>
 
@@ -46,11 +61,13 @@ export default function Register() {
                                 <input
                                     id="email-address"
                                     name="email"
+                                    value={email}
                                     type="email"
                                     autoComplete="email"
                                     required
                                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm"
                                     placeholder="Email address"
+                                    onChange={(e)=>setName(e.target.value)}
                                 />
                             </div>
 
@@ -62,10 +79,12 @@ export default function Register() {
                                     id="password"
                                     name="password"
                                     type="password"
+                                    value={password}
                                     autoComplete="current-password"
                                     required
                                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm"
                                     placeholder="Password"
+                                    onChange={(e)=>setName(e.target.value)}
                                 />
                             </div>
 
@@ -79,11 +98,13 @@ export default function Register() {
                                 <input
                                     id="confirmPassword"
                                     name="confirmPassword"
-                                    type="confirmPassword"
+                                    type="password"
+                                    value={confirmPassword}
                                     autoComplete="current-confirmPassword"
                                     required
                                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm"
                                     placeholder="confirmPassword"
+                                    onChange={(e)=>setName(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -91,9 +112,11 @@ export default function Register() {
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
                                 <input
-                                    id="remember-me"
-                                    name="remember-me"
+                                    id="agree"
+                                    name="agree"
                                     type="checkbox"
+                                    checked={agreed}
+                                    onChange={(e)=>setagreed(e.target.checked)}
                                     className="h-4 w-4 text-violet-600 focus:ring-violet-500 border-gray-300 rounded"
                                 />
                                 <label
