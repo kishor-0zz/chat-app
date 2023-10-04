@@ -1,18 +1,31 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoImage from "../assets/images/lws-logo-light.svg";
+import { useRegisterMutation } from "../features/auth/authApi";
 
 export default function Register() {
-const [name, setName] = useState("")
-const [email, setEmail] = useState("")
-const [password, setPassword] = useState("")
-const [confirmPassword, setConfirmPassword] = useState("")
+const [name, setName] = useState(" ")
+const [email, setEmail] = useState(" ")
+const [password, setPassword] = useState(" ")
+const [confirmPassword, setConfirmPassword] = useState(" ")
 const [agreed, setagreed]= useState(false)
 
+// const [register,{data, isLoading, isError}]= useRegisterMutation()
 
 const registerSubmit=(e)=>{
     e.preventDefault();
 
+
+    if(confirmPassword !== password){
+
+    }else{
+        // register({
+        //     name,
+        //     email,
+        //     password,
+        //     agreed
+        // })
+    }
 }
 
     return (
